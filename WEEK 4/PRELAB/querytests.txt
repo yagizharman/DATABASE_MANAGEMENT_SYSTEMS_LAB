@@ -1,0 +1,15 @@
+SELECT sales.customers.customer_id, first_name,last_name,order_status,order_date,required_date,shipped_date from sales.customers,sales.orders where sales.customers.customer_id=sales.orders.customer_id;
+UPDATE sales.customers SET sales.customers.first_name='Debrin',sales.customers.last_name='Burkin' WHERE sales.customers.customer_id=1;
+DELETE FROM sales.customers WHERE sales.customers.customer_id=1;
+SELECT TOP 10 first_name,last_name from sales.customers;
+SELECT MIN(list_price) AS SmallestPrice from production.products;
+SELECT MAX(list_price) AS HighestPrice from production.products;
+SELECT product_name,list_price,category_name,brand_name FROM production.products p,production.brands b, production.categories c WHERE p.brand_id=b.brand_id and p.category_id=c.category_id;
+SELECT AVG(list_price)  from production.products;
+SELECT COUNT(order_status)  from sales.order;
+SELECT SUM(list_price)  from production.products;
+SELECT * FROM sales.customers WHERE sales.customers.first_name LIKE '%d';
+SELECT * FROM sales.customers WHERE sales.customers.first_name LIKE '%ad';
+SELECT * FROM sales.customers WHERE sales.customers.first_name LIKE '[abd]%';
+
+
